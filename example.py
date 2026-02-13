@@ -1,5 +1,4 @@
 '''
-Doctstring = documentation that explains the purpose of file
 The purpose of this file is to help students practice writing functions and using doctests.
 '''
 
@@ -10,10 +9,6 @@ def is_even(n):
 
     HINT:
     Use the modulus operator %
-    
-    #Any line that starts with >>> is called a "dotest" 
-    #>>> is the prompt for python 
-    #$ is the prompt for the shell/terminal
 
     >>> is_even(0)
     True
@@ -28,7 +23,7 @@ def is_even(n):
     >>> type(is_even(0))
     <class 'bool'>
     '''
-    return n % 2 == 0
+    return n % 2 == 0 
 
 
 def factorial(n):
@@ -54,11 +49,12 @@ def factorial(n):
     93326215443944152681699238856266700490715968264381621468592963895217599993229915608941463976156518286253697920827223758251185210916864000000000000000000000000
     '''
     accumulator = 1
-    for i in range(1, n+1):
+    
+    for i in range(1, n + 1):
         accumulator *= i 
     return accumulator
 
-"""
+
 def largest(xs):
     '''
     Return the largest element in a list.
@@ -76,6 +72,14 @@ def largest(xs):
     10
     >>> largest([])
     '''
+    if len(xs) == 0:
+        return None
+    
+    max_value = xs[0]
+    for x in xs: 
+        if x > max_value:
+            max_value = x 
+    return max_value
 
 
 def filter_odd(xs):
@@ -94,4 +98,9 @@ def filter_odd(xs):
     >>> filter_odd([20,13,4,16,8,19,10])
     [20, 4, 16, 8, 10]
     '''
-"""
+    result = []
+    
+    for x in xs: 
+        if x % 2 == 0: 
+            result.append(x)
+    return result
